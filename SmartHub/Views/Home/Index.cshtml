@@ -1,0 +1,24 @@
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model List<SmartHub.Models.PzemEntiy>
+
+@{
+    ViewBag.Title = "title";
+    //Layout = "_Layout";
+}
+
+<h2>Pzem Top 10</h2>
+
+@foreach (var item in @Model)
+{
+    <li>
+        @item.Id @@ @item.CreateAt
+        Voltage: @item.Voltage V
+        Current: @item.Current A
+        Power:@item.Power W
+        Energy: @item.Energy kWh
+        Frequency: @item.Frequency Hz
+        PF: @item.PF
+    </li>
+}
+
+<h3>Count:@Model.Count</h3>

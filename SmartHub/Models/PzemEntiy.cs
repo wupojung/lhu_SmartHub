@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SmartHub.Models;
 
 public class PzemEntiy
@@ -10,13 +12,15 @@ public class PzemEntiy
         Frequency: 59.9Hz
         PF: 0.95
      */
-
+    [Key] public int Id { get; set; }
     public float Voltage { get; set; }
     public float Current { get; set; }
     public float Power { get; set; }
     public float Energy { get; set; }
     public float Frequency { get; set; }
     public float PF { get; set; }
+
+    public DateTime CreateAt { get; set; }
 
     public override string ToString()
     {
