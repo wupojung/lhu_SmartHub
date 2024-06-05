@@ -15,8 +15,10 @@ namespace SmartHub.Controllers
             _pzemService = pzemService;
         }
 
-        public void Get()
+        [HttpGet("Top/{count?}")]
+        public async Task<List<PzemEntiy>>  Top(int count = 10)
         {
+            return  await _pzemService.ListAsync(count);
         }
 
         [HttpPost]
@@ -30,5 +32,9 @@ namespace SmartHub.Controllers
 
             return result;
         }
+        
+        
+        
+        
     }
 }
