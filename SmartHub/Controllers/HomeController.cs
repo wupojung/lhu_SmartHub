@@ -25,6 +25,12 @@ public class HomeController : Controller
     public async Task<IActionResult> Top(int count = 10)
     {
         var data = await _pzemService.ListAsync(count);
-        return await Task.Run(() => View("Index",data));
+        return await Task.Run(() => View("Index", data));
+    }
+
+    [HttpGet("Dashboard")]
+    public  IActionResult Dashboard()
+    {
+        return View();
     }
 }
